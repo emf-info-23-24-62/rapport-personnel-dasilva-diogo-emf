@@ -486,11 +486,14 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `slice()` - ne conserver que certaines lignes d'un tableau
 
-Description à faire par vos soins...
+slice permet de extraire une partie du tableau ou d'une chaine de charactère sans le modifié, on choisi un d'où il commence et/ou il fini
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const fruits = ["pomme","banane","fraise","melon","orange"];
+
+const example1 = fruits.slice(2); // ["fraise","melon","orange"]
+const example2 = fruits.slice(0, 3); // ["pomme","banane","fraise"]
+const example3 = fruits.slice(1, -1) // ["banane","fraise","melon"]
 ```
 
 ## `splice()` - supprimer/insérer/remplacer des valeurs dans un tableau
@@ -558,11 +561,13 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `flat()` - aplatir un tableau
 
-Description à faire par vos soins...
+flat() permet de transformer un tableau qui contient des sous-tableau en un seul tableau, il peut aplatir plusieur de niveaux tableaux
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1,2, [3,4,[5,6]]];
+
+const example1 = nombres.flat(); // [1, 2, 3, 4, [5, 6]]
+const exaple2 = nombres.flat(2); // [1, 2, 3, 4, 5, 6]
 ```
 
 ## `sort()` - pour trier un tableau
@@ -576,11 +581,48 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `map()` - tableau avec les résultats d'une fonction
 
-Description à faire par vos soins...
-
+map() permet de transformer chaque élément d’un tableau avec une fonction et de renvoyer un nouveau tableau contenant les résultats. Le tableau original ne change pas
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3, 4];
+const doubles = nombres.map(x => x * 2);
+
+console.log(doubles); // [2, 4, 6, 8]
+
+const villes = [
+  { nom: "Lausanne", canton: "VD" },
+  { nom: "Genève", canton: "GE" }
+];
+const cantons = villes.map(v => v.canton);
+console.log(cantons); // ["VD", "GE"]
+
+const dataMotos = [
+  { 
+    marque: "Yamaha", 
+    modeles: [
+      { nom: "R1", prix: 20000 },
+      { nom: "MT-07", prix: 8000 }
+    ]
+  },
+  { 
+    marque: "Honda", 
+    modeles: [
+      { nom: "CBR600RR", prix: 12000 },
+      { nom: "CB500F", prix: 6500 }
+    ]
+  }
+];
+
+const resultat = dataMotos.map(moto => ({
+  marque: moto.marque,
+  modele: moto.modeles.map(modele => modele.nom)
+}));
+console.log(resultat);
+/* 
+[
+  { marque: "Yamaha", modele: ["R1", "MT-07"] },
+  { marque: "Honda",  modele: ["CBR600RR", "CB500F"] }
+]
+*/
 ```
 
 ## `filter()` - tableau avec les éléments passant un test
@@ -603,11 +645,21 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `flatMap()` - chaînage de map() et flat()
 
-Description à faire par vos soins...
+flatMap() combine map + flat(1) , il applique une fonction à chaque élément d’un tableau et aplatit le résultat d’un niveau.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3];
+const result = nombres.flatMap(x => [x, x * 2]);
+
+console.log(result); // [1, 2, 2, 4, 3, 6]
+
+const produits = [
+  { nom: "Pomme", categories: ["fruit", "bio"] },
+  { nom: "Carotte", categories: ["légume", "bio"] }
+];
+
+const categories = produits.flatMap(p => p.categories);
+console.log(categories); // ["fruit", "bio", "légume", "bio"]
 ```
 
 ## `reduce()` et `reduceRight()` - réduire un tableau à une seule valeur
