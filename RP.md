@@ -669,11 +669,44 @@ console.log(categories); // ["fruit", "bio", "légume", "bio"]
 
 ## `reduce()` et `reduceRight()` - réduire un tableau à une seule valeur
 
-Description à faire par vos soins...
-
+permet de transformer un tableau en une seule valeur (somme, moyenne, texte, objet, etc.) en appliquant une fonction sur chaque élément. (reduce de gauche a droite/ reduceRight de droite à gauche)
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// reduce(callback, valeurInitiale)
+const total = [1, 2, 3, 4].reduce((acc, val) => acc + val, 0);
+// acc = accumulateur, val = valeur courante
+console.log(total); // 10
+
+// reduceRight() fait la même chose mais de droite à gauche
+const mot = ["a", "b", "c"].reduceRight((acc, val) => acc + val, "");
+console.log(mot); // "cba"
+
+const nombres = [10, 25, 3, 47, 19];
+const max = nombres.reduce((acc, val) => (val > acc ? val : acc));
+console.log(max); // 47
+
+const fruits = ["🍎", "🍌", "🍎", "🍒", "🍌", "🍌"];
+const compteur = fruits.reduce((acc, fruit) => {
+  acc[fruit] = (acc[fruit] || 0) + 1;
+  return acc;
+}, {});
+console.log(compteur); 
+// { '🍎': 2, '🍌': 3, '🍒': 1 }
+
+
+const utilisateurs = [
+  { id: 1, nom: "Alice" },
+  { id: 2, nom: "Bob" },
+  { id: 3, nom: "Charlie" }
+];
+
+const dictionnaire = utilisateurs.reduce((acc, user) => {
+  acc[user.id] = user.nom;
+  return acc;
+}, {});
+console.log(dictionnaire);
+// { 1: 'Alice', 2: 'Bob', 3: 'Charlie' }
+
+
 ```
 
 ## `reverse()` - inverser l'ordre du tableau
