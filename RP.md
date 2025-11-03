@@ -268,11 +268,16 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `Math.round()` - arrondir à la valeur entière la plus proche
 
-Description à faire par vos soins...
-
+Math.round rend l'entier le plus proche de la valeur donné
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+Math.round(4.3); // → 4
+Math.round(4.5); // → 5
+Math.round(4.7); // → 5
+Math.round(-2.5); // → -2
+
+Math.round(18.756 * 10) / 10; // → 18.8
+Math.round(3.1415 * 100) / 100; // → 3.14
+Math.round(3.34 * 2) / 2 // → 3.5
 ```
 
 ## `Math.trunc()` - supprime la virgule et retourne la partie entière d'un nombre
