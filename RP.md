@@ -232,20 +232,52 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `Math.min()` - plus petite valeur
 
-Description à faire par vos soins...
+Math.min() retourne la plus petite valeur parmi les arguments passés.
+Si aucun argument n’est fourni → retourne Infinity.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Plus petit nombre parmi des valeurs
+console.log(Math.min(3, 7, 2, 9)); // 2
+
+// Avec des nombres négatifs
+console.log(Math.min(-5, -2, -10)); // -10
+
+// Trouver le min dans un tableau avec spread
+const notes = [12, 15, 18, 10];
+console.log(Math.min(...notes)); // 10
+
+// Comparer des résultats calculés
+const a = 5, b = 8, c = 3;
+console.log(Math.min(a + b, c * 4)); // 12
+
+// Aucun argument → Infinity
+console.log(Math.min()); // Infinity
+
 ```
 
 ## `Math.max()` - plus grande valeur
 
-Description à faire par vos soins...
+Math.max() retourne la plus grande valeur parmi les arguments passés.
+Si aucun argument n’est fourni → retourne -Infinity.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// Plus grand nombre parmi des valeurs
+console.log(Math.max(3, 7, 2, 9)); // 9
+
+// Avec des nombres négatifs
+console.log(Math.max(-5, -2, -10)); // -2
+
+// Trouver le max dans un tableau avec spread
+const notes = [12, 15, 18, 10];
+console.log(Math.max(...notes)); // 18
+
+// Comparer des résultats calculés
+const a = 5, b = 8, c = 3;
+console.log(Math.max(a + b, c * 4)); // 13
+
+// Aucun argument → -Infinity
+console.log(Math.max()); // -Infinity
+
 ```
 
 ## `Math.ceil()` - arrondir à la prochaine valeur entière la plus proche
@@ -291,20 +323,53 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## `Math.sqrt()` - la raçine carrée d'un nombre
 
-Description à faire par vos soins...
+Math.sqrt(x) retourne la racine carrée d’un nombre x.
+Si x est négatif, le résultat sera NaN.
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+//Racine carrée simple
+console.log(Math.sqrt(9)); // 3
+console.log(Math.sqrt(16)); // 4
+
+//Racine carrée d'un nombre décimal
+console.log(Math.sqrt(2)); // 1.4142135623730951
+
+//Vérifier si un nombre est un carré parfait
+const n = 25;
+console.log(Math.sqrt(n) % 1 === 0); // true -> carré parfait
+
+//Racine carrée d'un nombre négatif
+console.log(Math.sqrt(-4)); // NaN
+
 ```
 
 ## `Math.random()` - générer un nombre aléatoire entre 0.0 (compris) et 1.0 (non compris)
 
-Description à faire par vos soins...
+Math.random() retourne un nombre décimal aléatoire ≥ 0 et < 1.
+
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+//Nombre aléatoire entre 0 et 1
+console.log(Math.random()); // ex: 0.482345
+
+//Nombre aléatoire entre 0 et 10
+const max = 10;
+console.log(Math.random() * max); // ex: 7.8234
+
+//Nombre entier aléatoire entre 0 et 9
+console.log(Math.floor(Math.random() * 10)); // ex: 4
+
+//Nombre entier aléatoire entre min et max inclus
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(getRandomInt(5, 15)); // ex: 12
+
+//Choisir un élément aléatoire dans un tableau
+const fruits = ["pomme", "banane", "cerise"];
+const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+console.log(randomFruit); // ex: "banane"
+
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
