@@ -79,7 +79,16 @@
 
 # Introduction
 
-> Votre introduction avec notamment les objectifs opérationnels du module.
+Dans ce module, je vais apprendre la programmation fonctionnelle en JavaScript et comprendre ses différences avec la programmation impérative.
+
+Pendant ce module, je vais :
+
+- Découvrir les paradigmes de programmation et l’intérêt de la programmation fonctionnelle
+- Utiliser les fonctions de base comme map, filter et reduce
+- Appliquer des concepts comme fonctions pures, immuabilité, closures, currying et récursion
+- Mettre en pratique les bonnes pratiques et patterns, et apprendre à refactoriser du code
+
+Ce rapport permettra de présenter les notions vues durant le module, en expliquant les méthodes et en donnant des exemples concrets de leur utilisation.
 
 # Opérateurs javascript super-cooool 😎
 
